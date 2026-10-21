@@ -918,3 +918,16 @@ footer {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ===========================
+   CERT LINK
+=========================== */
+.cert-link { color: inherit; }
+.cert-link:hover { color: inherit; }
+.cert-info .cert-view {
+  display: block;
+  margin-top: .35rem;
+  color: var(--accent);
+  font-size: .75rem;
+}
+.cert-link:hover .cert-view { color: var(--white); }
