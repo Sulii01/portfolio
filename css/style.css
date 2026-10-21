@@ -404,7 +404,8 @@ a:hover { color: var(--white); }
 }
 .tl-dot {
   position: absolute;
-  left: -2.5rem;
+  /* střed tečky (14px) na střed čáry (2px) na začátku .timeline */
+  left: calc(-2rem - 6px);
   top: .4rem;
   width: 14px; height: 14px;
   background: var(--accent);
