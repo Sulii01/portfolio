@@ -5,6 +5,8 @@
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
   let W, H, nodes = [], RAF;
+  const mouse = { x: null, y: null };
+  const MOUSE_DIST = 200;
   const NODE_COUNT = 70;
   const MAX_DIST   = 160;
   const ACCENT     = '0,229,255';
@@ -42,6 +44,19 @@
       ctx.fillStyle = `rgba(${ACCENT},.7)`;
       ctx.fill();
 
+      if (mouse.x !== null) {
+        const mx = a.x - mouse.x, my = a.y - mouse.y;
+        const md = Math.sqrt(mx * mx + my * my);
+        if (md < MOUSE_DIST) {
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.strokeStyle = `rgba(${ACCENT},${(1 - md / MOUSE_DIST) * .45})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+
       for (let j = i + 1; j < nodes.length; j++) {
         const b = nodes[j];
         const dx = a.x - b.x, dy = a.y - b.y;
@@ -60,8 +75,13 @@
   }
 
   window.addEventListener('resize', () => { resize(); init(); });
+  window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+  document.addEventListener('mouseleave', () => { mouse.x = mouse.y = null; });
   resize();
   init();
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    nodes.forEach(n => { n.vx = n.vy = 0; });
+  }
   draw();
 })();
 
@@ -69,10 +89,14 @@
 /* ===========================
    NAVBAR SCROLL EFFECT
 =========================== */
-const navbar = document.getElementById('navbar');
+const navbar   = document.getElementById('navbar');
+const progress = document.getElementById('scroll-progress');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (max > 0 ? window.scrollY / max * 100 : 0) + '%';
+  document.body.classList.toggle('show-top', window.scrollY > window.innerHeight);
+}, { passive: true });
 
 
 /* ===========================
@@ -160,16 +184,17 @@ barFills.forEach(el => barIO.observe(el));
 
   const lines = [
     { type: 'prompt', text: 'whoami' },
-    { type: 'out',    text: 'jan.sulak — Správce sítě, Ing. student' },
-    { type: 'prompt', text: 'ping -c 3 vsb.cz' },
-    { type: 'ok',     text: '64 bytes from vsb.cz: time=1.4ms' },
-    { type: 'ok',     text: '64 bytes from vsb.cz: time=1.1ms' },
-    { type: 'ok',     text: '64 bytes from vsb.cz: time=0.9ms' },
+    { type: 'out',    text: 'jan.sulak — IT End User Support, Ing. student' },
+    { type: 'prompt', text: 'cat /etc/company' },
+    { type: 'out',    text: 'Euromedia Group, a.s.' },
+    { type: 'prompt', text: 'ticket --status #4021' },
+    { type: 'ok',     text: '✔ Vyřešeno — tiskárna opět online (2 min)' },
     { type: 'prompt', text: 'cat skills.txt' },
+    { type: 'out',    text: 'Windows | M365 | AD     | Helpdesk' },
     { type: 'out',    text: 'MikroTik | GPON | TCP/IP | Zabbix' },
     { type: 'out',    text: 'Proxmox  | Python | Bash  | Git' },
-    { type: 'prompt', text: 'echo $STATUS' },
-    { type: 'ok',     text: '✔ Dostupný pro nové projekty' },
+    { type: 'prompt', text: 'echo $MOTTO' },
+    { type: 'ok',     text: '✔ Každý problém má řešení' },
     { type: 'prompt', text: '' },
   ];
 
@@ -257,8 +282,49 @@ window.addEventListener('scroll', () => {
     if (window.scrollY >= s.offsetTop - 120) current = s.id;
   });
   navAs.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current
-      ? 'var(--accent)'
-      : '';
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
   });
 }, { passive: true });
+
+
+/* ===========================
+   ROLE ROTATOR (HERO)
+=========================== */
+(function () {
+  const el = document.getElementById('role-rotator');
+  if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const roles = [
+    'IT End User Support',
+    'Síťový specialista',
+    'Telekomunikační technik',
+    'Ing. student @ VŠB-TUO',
+  ];
+  let r = 0, c = roles[0].length, deleting = true;
+
+  function tick() {
+    const word = roles[r];
+    if (deleting) {
+      el.textContent = word.slice(0, --c);
+      if (c === 0) { deleting = false; r = (r + 1) % roles.length; }
+      setTimeout(tick, 35);
+    } else {
+      el.textContent = roles[r].slice(0, ++c);
+      if (c === roles[r].length) { deleting = true; setTimeout(tick, 2200); }
+      else setTimeout(tick, 70);
+    }
+  }
+  setTimeout(tick, 2600);
+})();
+
+
+/* ===========================
+   CARD SPOTLIGHT
+=========================== */
+document.querySelectorAll('.tl-card, .edu-card, .cert-card, .hobby-card, .stat-card').forEach(card => {
+  card.classList.add('spotlight');
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  });
+});

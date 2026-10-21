@@ -4,12 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jan Šulák – Portfolio</title>
+  <meta name="description" content="Jan Šulák – IT End User Support v Euromedia Group, a.s., absolvent VŠB-TUO (Telekomunikační technika). Sítě, MikroTik, GPON, Windows, Microsoft 365." />
+  <meta name="theme-color" content="#080c14" />
+  <meta property="og:title" content="Jan Šulák – Portfolio" />
+  <meta property="og:description" content="IT End User Support &bull; Sítě &bull; Telekomunikace" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sulii01.github.io/portfolio/" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080c14'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%2300e5ff'%3EJS%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
 </head>
 <body>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"></div>
 
   <!-- CANVAS BACKGROUND -->
   <canvas id="bg-canvas"></canvas>
@@ -34,10 +44,14 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-content">
-      <p class="hero-tag"><span class="blink">▋</span> Správce sítě &amp; Telekomunikační inženýr</p>
-      <h1 class="hero-name">Jan<br /><span class="accent">Šulák</span></h1>
+      <p class="hero-tag"><span class="blink">▋</span> <span id="role-rotator">IT End User Support</span></p>
+      <h1 class="hero-name">Jan<br /><span class="gradient-text">Šulák</span></h1>
+      <a href="#experience" class="hero-status">
+        <span class="pulse-dot"></span>
+        <span>Aktuálně: <strong>IT End User Support</strong> @ Euromedia Group</span>
+      </a>
       <p class="hero-sub">
-        Absolvent VŠB-TUO &bull; MikroTik &bull; GPON &bull; Zabbix &bull; Python
+        Absolvent VŠB-TUO &bull; IT podpora &bull; Windows &amp; M365 &bull; MikroTik &bull; GPON &bull; Python
       </p>
       <div class="hero-btns">
         <a href="#experience" class="btn btn-primary">Moje práce</a>
@@ -70,6 +84,11 @@
             se silným technickým zázemím a vášní pro inovace a moderní technologie.
           </p>
           <p>
+            Aktuálně pracuji jako <strong>IT End User Support</strong> ve společnosti
+            <strong>Euromedia Group, a.s.</strong>, kde pomáhám kolegům s řešením IT požadavků &ndash;
+            na místě i přes vzdálenou správu.
+          </p>
+          <p>
             Vynikám schopností rychle se učit, adaptovat se na nové výzvy a efektivně pracovat
             na řešení technických úkolů. Díky neustálému sebevzdělávání mám přehled o aktuálním
             vývoji v oblasti telekomunikací a praktické zkušenosti z terénu.
@@ -92,7 +111,7 @@
             <span class="stat-label">Certifikátů</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num" data-target="20">0</span>
+            <span class="stat-num" data-target="25">0</span>
             <span class="stat-label">Technologií</span>
           </div>
           <div class="stat-card">
@@ -109,6 +128,27 @@
     <div class="container">
       <h2 class="section-title">Pracovní zkušenosti</h2>
       <div class="timeline">
+
+        <div class="timeline-item current reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-date">2026 – současnost <span class="tl-now"><span class="pulse-dot"></span>Aktuálně</span></div>
+          <div class="tl-card">
+            <h3>IT End User Support</h3>
+            <span class="tl-company">Euromedia Group, a.s.</span>
+            <ul>
+              <li>Řešení uživatelských požadavků a incidentů přes ticketovací systém (helpdesk)</li>
+              <li>Podpora uživatelů na místě i vzdáleně &ndash; diagnostika a rychlé odstranění závad</li>
+              <li>Správa a instalace koncových zařízení: PC, notebooky, tiskárny, periferie a mobilní zařízení</li>
+              <li>Instalace a konfigurace OS Windows, aplikací a Microsoft 365 (Outlook, Teams, OneDrive)</li>
+              <li>Správa uživatelských účtů a přístupů, reset hesel, onboarding nových zaměstnanců</li>
+              <li>Řešení problémů s připojením k síti, VPN a sdíleným tiskem</li>
+              <li>Dokumentace postupů a eskalace složitějších požadavků na vyšší úroveň podpory</li>
+            </ul>
+            <div class="tl-tags">
+              <span>Helpdesk</span><span>Windows 10/11</span><span>Microsoft 365</span><span>Active Directory</span><span>Vzdálená podpora</span><span>Hardware</span>
+            </div>
+          </div>
+        </div>
 
         <div class="timeline-item reveal">
           <div class="tl-dot"></div>
@@ -226,6 +266,18 @@
     <div class="container">
       <h2 class="section-title">Dovednosti</h2>
       <div class="skills-wrapper">
+
+        <div class="skill-category reveal">
+          <h3 class="cat-title">IT podpora &amp; Helpdesk</h3>
+          <div class="skill-bars">
+            <div class="skill-bar"><span class="sk-name">Windows 10/11</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+            <div class="skill-bar"><span class="sk-name">Microsoft 365</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div></div>
+            <div class="skill-bar"><span class="sk-name">Vzdálená podpora</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div></div>
+            <div class="skill-bar"><span class="sk-name">Ticketing / Helpdesk</span><div class="bar-track"><div class="bar-fill" data-w="84"></div></div></div>
+            <div class="skill-bar"><span class="sk-name">Active Directory</span><div class="bar-track"><div class="bar-fill" data-w="68"></div></div></div>
+            <div class="skill-bar"><span class="sk-name">Hardware &amp; tiskárny</span><div class="bar-track"><div class="bar-fill" data-w="86"></div></div></div>
+          </div>
+        </div>
 
         <div class="skill-category reveal">
           <h3 class="cat-title">Sítě &amp; Infrastruktura</h3>
@@ -394,6 +446,7 @@
   <!-- FOOTER -->
   <footer>
     <p>© 2026 Jan Šulák &mdash; Vytvořeno s HTML/CSS/JS</p>
+    <a href="#hero" class="back-to-top" aria-label="Zpět nahoru">↑</a>
   </footer>
 
   <script src="js/main.js"></script>
