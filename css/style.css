@@ -1185,3 +1185,5 @@ html[lang="en"] .lang-opt[data-lang="en"] { color: var(--accent); font-weight: 7
 @media (max-width: 960px) {
   .hero-social { justify-content: center; }
 }
+.project-links { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin-top: 1rem; font-family: var(--font-mono); font-size: .8rem; }
+.project-featured { grid-column: 1 / -1; }
