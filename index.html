@@ -10,8 +10,13 @@
   <meta property="og:description" content="IT End User Support &bull; Sítě &bull; Telekomunikace" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sulii01.github.io/portfolio/" />
+  <meta property="og:image" content="https://sulii01.github.io/portfolio/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bc. Jan Šulák – IT End User Support" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080c14'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%2300e5ff'%3EJS%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/style.css?v=20261027f" />
+  <link rel="stylesheet" href="css/style.css?v=20261027g" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -28,17 +33,23 @@
   <nav id="navbar">
     <div class="nav-logo">JS<span class="accent">.</span></div>
     <ul class="nav-links">
-      <li><a href="#hero">Domů</a></li>
-      <li><a href="#about">O mně</a></li>
-      <li><a href="#experience">Zkušenosti</a></li>
-      <li><a href="#education">Vzdělání</a></li>
-      <li><a href="#skills">Dovednosti</a></li>
-      <li><a href="#certs">Certifikáty</a></li>
-      <li><a href="#contact">Kontakt</a></li>
+      <li><a href="#hero" data-en="Home">Domů</a></li>
+      <li><a href="#about" data-en="About">O mně</a></li>
+      <li><a href="#experience" data-en="Experience">Zkušenosti</a></li>
+      <li><a href="#projects" data-en="Projects">Projekty</a></li>
+      <li><a href="#education" data-en="Education">Vzdělání</a></li>
+      <li><a href="#skills" data-en="Skills">Dovednosti</a></li>
+      <li><a href="#certs" data-en="Certificates">Certifikáty</a></li>
+      <li><a href="#contact" data-en="Contact">Kontakt</a></li>
     </ul>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language to English">
+        <span class="lang-opt" data-lang="cs">CZ</span><span class="lang-sep">/</span><span class="lang-opt" data-lang="en">EN</span>
+      </button>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -48,14 +59,14 @@
       <h1 class="hero-name"><span class="hero-degree">Bc.</span>Jan<br /><span class="gradient-text">Šulák</span></h1>
       <a href="#experience" class="hero-status">
         <span class="pulse-dot"></span>
-        <span>Aktuálně: <strong>IT End User Support</strong> @ Euromedia Group</span>
+        <span data-en="Currently: <strong>IT End User Support</strong> @ Euromedia Group">Aktuálně: <strong>IT End User Support</strong> @ Euromedia Group</span>
       </a>
-      <p class="hero-sub">
+      <p class="hero-sub" data-en="VŠB-TUO graduate &bull; IT support &bull; Windows &amp; M365 &bull; MikroTik &bull; GPON &bull; Python">
         Absolvent VŠB-TUO &bull; IT podpora &bull; Windows &amp; M365 &bull; MikroTik &bull; GPON &bull; Python
       </p>
       <div class="hero-btns">
-        <a href="#experience" class="btn btn-primary">Moje práce</a>
-        <a href="#contact" class="btn btn-outline">Kontakt</a>
+        <a href="#experience" class="btn btn-primary" data-en="My work">Moje práce</a>
+        <a href="#contact" class="btn btn-outline" data-en="Contact">Kontakt</a>
       </div>
       <div class="hero-scroll-hint">
         <span>Scroll</span>
@@ -76,47 +87,46 @@
   <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">O mně</h2>
+      <h2 class="section-title" data-en="About me">O mně</h2>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p>
+          <p data-en="I am a graduate of the <strong>Telecommunication Engineering</strong> programme at VŠB-TUO with a strong technical background and a passion for innovation and modern technology.">
             Jsem absolvent studijního programu <strong>Telekomunikační technika</strong> na VŠB-TUO
             se silným technickým zázemím a vášní pro inovace a moderní technologie.
           </p>
-          <p>
+          <p data-en="I currently work as <strong>IT End User Support</strong> at <strong>Euromedia Group, a.s.</strong>, helping colleagues solve their IT requests &ndash; on site as well as via remote support.">
             Aktuálně pracuji jako <strong>IT End User Support</strong> ve společnosti
             <strong>Euromedia Group, a.s.</strong>, kde pomáhám kolegům s řešením IT požadavků &ndash;
             na místě i přes vzdálenou správu.
           </p>
-          <p>
+          <p data-en="I learn quickly, adapt to new challenges and work efficiently on technical problems. Thanks to continuous self-education I keep up with the latest developments in telecommunications and have hands-on field experience.">
             Vynikám schopností rychle se učit, adaptovat se na nové výzvy a efektivně pracovat
             na řešení technických úkolů. Díky neustálému sebevzdělávání mám přehled o aktuálním
             vývoji v oblasti telekomunikací a praktické zkušenosti z terénu.
           </p>
           <ul class="about-info">
-            <li><span class="info-label">Věk</span> <span>25 let</span></li>
-            <li><span class="info-label">Místo</span> <span>Bystřice nad Olší, CZ</span></li>
+            <li><span class="info-label" data-en="Location">Místo</span> <span>Bystřice nad Olší, CZ</span></li>
             <li><span class="info-label">Email</span> <a href="mailto:sulakhonza@gmail.com">sulakhonza@gmail.com</a></li>
-            <li><span class="info-label">Telefon</span> <span>730 809 795</span></li>
-            <li><span class="info-label">Řidičák</span> <span>AM, B1, B</span></li>
+            <li><span class="info-label" data-en="Phone">Telefon</span> <a href="tel:+420730809795">+420 730 809 795</a></li>
+            <li><span class="info-label" data-en="Licence">Řidičák</span> <span>AM, B1, B</span></li>
           </ul>
         </div>
         <div class="about-stats reveal">
           <div class="stat-card">
             <span class="stat-num" data-target="3">0</span>
-            <span class="stat-label">Roky praxe</span>
+            <span class="stat-label" data-en="Years of experience">Roky praxe</span>
           </div>
           <div class="stat-card">
             <span class="stat-num" data-target="8">0</span>
-            <span class="stat-label">Certifikátů</span>
+            <span class="stat-label" data-en="Certificates">Certifikátů</span>
           </div>
           <div class="stat-card">
             <span class="stat-num" data-target="25">0</span>
-            <span class="stat-label">Technologií</span>
+            <span class="stat-label" data-en="Technologies">Technologií</span>
           </div>
           <div class="stat-card">
             <span class="stat-num" data-target="2">0</span>
-            <span class="stat-label">Jazyky</span>
+            <span class="stat-label" data-en="Languages">Jazyky</span>
           </div>
         </div>
       </div>
@@ -126,41 +136,41 @@
   <!-- EXPERIENCE -->
   <section id="experience" class="section section-dark">
     <div class="container">
-      <h2 class="section-title">Pracovní zkušenosti</h2>
+      <h2 class="section-title" data-en="Work experience">Pracovní zkušenosti</h2>
       <div class="timeline">
 
         <div class="timeline-item current reveal">
           <div class="tl-dot"></div>
-          <div class="tl-date">září 2026 – současnost <span class="tl-now"><span class="pulse-dot"></span>Aktuálně</span></div>
+          <div class="tl-date"><span data-en="September 2026 – present">září 2026 – současnost</span> <span class="tl-now"><span class="pulse-dot"></span><span data-en="Current">Aktuálně</span></span></div>
           <div class="tl-card">
             <h3>IT End User Support</h3>
             <span class="tl-company">Euromedia Group, a.s.</span>
             <ul>
-              <li>Řešení uživatelských požadavků a incidentů přes ticketovací systém (helpdesk)</li>
-              <li>Podpora uživatelů na místě i vzdáleně &ndash; diagnostika a rychlé odstranění závad</li>
-              <li>Správa a instalace koncových zařízení: PC, notebooky, tiskárny, periferie a mobilní zařízení</li>
-              <li>Instalace a konfigurace OS Windows, aplikací a Microsoft 365 (Outlook, Teams, OneDrive)</li>
-              <li>Správa uživatelských účtů a přístupů, reset hesel, onboarding nových zaměstnanců</li>
-              <li>Řešení problémů s připojením k síti, VPN a sdíleným tiskem</li>
-              <li>Dokumentace postupů a eskalace složitějších požadavků na vyšší úroveň podpory</li>
+              <li data-en="Resolving user requests and incidents through a ticketing system (helpdesk)">Řešení uživatelských požadavků a incidentů přes ticketovací systém (helpdesk)</li>
+              <li data-en="On-site and remote user support &ndash; diagnostics and quick troubleshooting">Podpora uživatelů na místě i vzdáleně &ndash; diagnostika a rychlé odstranění závad</li>
+              <li data-en="Deployment and management of end-user devices: PCs, laptops, printers, peripherals and mobile devices">Správa a instalace koncových zařízení: PC, notebooky, tiskárny, periferie a mobilní zařízení</li>
+              <li data-en="Installation and configuration of Windows, applications and Microsoft 365 (Outlook, Teams, OneDrive)">Instalace a konfigurace OS Windows, aplikací a Microsoft 365 (Outlook, Teams, OneDrive)</li>
+              <li data-en="User account and access management, password resets, onboarding of new employees">Správa uživatelských účtů a přístupů, reset hesel, onboarding nových zaměstnanců</li>
+              <li data-en="Troubleshooting network connectivity, VPN and shared printing">Řešení problémů s připojením k síti, VPN a sdíleným tiskem</li>
+              <li data-en="Documenting procedures and escalating complex requests to higher support levels">Dokumentace postupů a eskalace složitějších požadavků na vyšší úroveň podpory</li>
             </ul>
             <div class="tl-tags">
-              <span>Helpdesk</span><span>Windows 10/11</span><span>Microsoft 365</span><span>Active Directory</span><span>Vzdálená podpora</span><span>Hardware</span>
+              <span>Helpdesk</span><span>Windows 10/11</span><span>Microsoft 365</span><span>Active Directory</span><span data-en="Remote support">Vzdálená podpora</span><span>Hardware</span>
             </div>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="tl-dot"></div>
-          <div class="tl-date">říjen 2025 – květen 2026</div>
+          <div class="tl-date" data-en="October 2025 – May 2026">říjen 2025 – květen 2026</div>
           <div class="tl-card">
-            <h3>Správce sítě</h3>
+            <h3 data-en="Network Administrator">Správce sítě</h3>
             <span class="tl-company">VEJNET.CZ s.r.o. &mdash; Karviná</span>
             <ul>
-              <li>Diagnostika a monitoring síťových problémů</li>
-              <li>Analýza síťového provozu &amp; správa optických/bezdrátových sítí</li>
-              <li>Konfigurace síťových prvků, řešení incidentů</li>
-              <li>Technická podpora ISP služeb, práce s logy a dokumentací</li>
+              <li data-en="Diagnostics and monitoring of network issues">Diagnostika a monitoring síťových problémů</li>
+              <li data-en="Network traffic analysis &amp; management of optical/wireless networks">Analýza síťového provozu &amp; správa optických/bezdrátových sítí</li>
+              <li data-en="Configuration of network devices, incident resolution">Konfigurace síťových prvků, řešení incidentů</li>
+              <li data-en="Technical support for ISP services, working with logs and documentation">Technická podpora ISP služeb, práce s logy a dokumentací</li>
             </ul>
             <div class="tl-tags">
               <span>MikroTik</span><span>GPON</span><span>Zabbix</span><span>TCP/IP</span>
@@ -170,14 +180,14 @@
 
         <div class="timeline-item reveal">
           <div class="tl-dot"></div>
-          <div class="tl-date">červen 2024 – říjen 2025</div>
+          <div class="tl-date" data-en="June 2024 – October 2025">červen 2024 – říjen 2025</div>
           <div class="tl-card">
-            <h3>Programování PLC</h3>
-            <span class="tl-company">PROSPECT spol. s r.o. (Smluvní partner)</span>
+            <h3 data-en="PLC Programming">Programování PLC</h3>
+            <span class="tl-company" data-en="PROSPECT spol. s r.o. (contractor)">PROSPECT spol. s r.o. (Smluvní partner)</span>
             <ul>
-              <li>Spolupráce na programování PLC automatů (Siemens, LOGO!)</li>
-              <li>Tvorba a úprava HMI panelů pro vizualizaci a ovládání</li>
-              <li>Základní IT podpora</li>
+              <li data-en="Collaborating on PLC programming (Siemens, LOGO!)">Spolupráce na programování PLC automatů (Siemens, LOGO!)</li>
+              <li data-en="Creating and editing HMI panels for visualisation and control">Tvorba a úprava HMI panelů pro vizualizaci a ovládání</li>
+              <li data-en="Basic IT support">Základní IT podpora</li>
             </ul>
             <div class="tl-tags">
               <span>Siemens</span><span>LOGO!</span><span>HMI</span><span>PLC</span>
@@ -187,193 +197,239 @@
 
         <div class="timeline-item reveal">
           <div class="tl-dot"></div>
-          <div class="tl-date">srpen 2024 – září 2024</div>
+          <div class="tl-date" data-en="August 2024 – September 2024">srpen 2024 – září 2024</div>
           <div class="tl-card">
-            <h3>Vedoucí táboru</h3>
-            <span class="tl-company">Dům dětí a mládeže (Smluvní partner) &mdash; Bystřice</span>
+            <h3 data-en="Summer Camp Leader">Vedoucí táboru</h3>
+            <span class="tl-company" data-en="House of Children and Youth (contractor) &mdash; Bystřice">Dům dětí a mládeže (Smluvní partner) &mdash; Bystřice</span>
             <ul>
-              <li>Organizace a vedení letního tábora pro mládež</li>
-              <li>Koordinace týmu a zajištění bezpečnosti účastníků</li>
+              <li data-en="Organising and leading a summer camp for young people">Organizace a vedení letního tábora pro mládež</li>
+              <li data-en="Team coordination and ensuring participants' safety">Koordinace týmu a zajištění bezpečnosti účastníků</li>
             </ul>
-            <div class="tl-tags"><span>Leadership</span><span>Organizace</span></div>
+            <div class="tl-tags"><span>Leadership</span><span data-en="Organisation">Organizace</span></div>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="tl-dot"></div>
-          <div class="tl-date">květen 2022 – květen 2025</div>
-          <div class="tl-card">
-            <h3>Prodejní činnost</h3>
-            <span class="tl-company">TESCO (Smluvní partner) &mdash; Bystřice</span>
-            <ul>
-              <li>Obsluha u pokladny, vybalování zboží</li>
-            </ul>
-            <div class="tl-tags"><span>Zákaznický servis</span></div>
+        <details class="timeline-item tl-more reveal">
+          <summary>
+            <div class="tl-dot"></div>
+            <span class="tl-more-label"><span data-en="Other part-time jobs">Další brigády</span> <span class="tl-more-count">3</span></span>
+            <span class="tl-more-years">2018 – 2025</span>
+          </summary>
+          <div class="tl-card tl-more-list">
+            <div class="tl-mini">
+              <span class="tl-mini-date" data-en="05/2022 – 05/2025">05/2022 – 05/2025</span>
+              <div><strong data-en="Sales assistant">Prodejní činnost</strong> &mdash; <span data-en="TESCO (contractor), Bystřice &ndash; cashier, restocking">TESCO (Smluvní partner), Bystřice &ndash; pokladna, vybalování zboží</span></div>
+            </div>
+            <div class="tl-mini">
+              <span class="tl-mini-date">11/2019 – 10/2021</span>
+              <div><strong data-en="Turnstile operator">Obsluha turniketu</strong> &mdash; <span data-en="GF Corporate (contractor), Třinec">GF Corporate (Smluvní partner), Třinec</span></div>
+            </div>
+            <div class="tl-mini">
+              <span class="tl-mini-date">10/2018 – 11/2019</span>
+              <div><strong data-en="Steward at sports matches">Hlídání sportovních utkání</strong> &mdash; <span data-en="TOSsecurity (contractor), Třinec">TOSsecurity (Smluvní partner), Třinec</span></div>
+            </div>
           </div>
-        </div>
+        </details>
 
-        <div class="timeline-item reveal">
-          <div class="tl-dot"></div>
-          <div class="tl-date">listopad 2019 – říjen 2021</div>
-          <div class="tl-card">
-            <h3>Obsluha turniketu</h3>
-            <span class="tl-company">GF Corporate (Smluvní partner) &mdash; Třinec</span>
-          </div>
-        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="timeline-item reveal">
-          <div class="tl-dot"></div>
-          <div class="tl-date">říjen 2018 – listopad 2019</div>
-          <div class="tl-card">
-            <h3>Hlídání sportovních utkání</h3>
-            <span class="tl-company">TOSsecurity (Smluvní partner) &mdash; Třinec</span>
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title" data-en="Projects">Projekty</h2>
+      <p class="section-lead reveal" data-en="A selection of projects and hands-on work from my jobs, studies and courses.">Výběr projektů a praktické práce ze zaměstnání, studia a kurzů.</p>
+      <div class="projects-grid">
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">📈</span>
+            <span class="project-ctx" data-en="VEJNET.CZ &bull; work">VEJNET.CZ &bull; práce</span>
           </div>
-        </div>
+          <h3 data-en="ISP network monitoring &amp; operations">Monitoring a provoz sítě ISP</h3>
+          <p data-en="Day-to-day operation of an ISP network with optical (GPON) and wireless segments &ndash; monitoring in Zabbix, traffic analysis, configuring MikroTik devices and resolving customer incidents.">Každodenní provoz sítě poskytovatele internetu s optickou (GPON) i bezdrátovou částí &ndash; monitoring v Zabbixu, analýza provozu, konfigurace prvků MikroTik a řešení incidentů zákazníků.</p>
+          <div class="tl-tags"><span>MikroTik</span><span>GPON</span><span>Zabbix</span><span>TCP/IP</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">🧪</span>
+            <span class="project-ctx" data-en="Cisco NetAcad &bull; courses">Cisco NetAcad &bull; kurzy</span>
+          </div>
+          <h3 data-en="Network labs in Cisco Packet Tracer">Síťové laby v Cisco Packet Tracer</h3>
+          <p data-en="Designing and configuring network topologies as part of the Network Technician Career Path &ndash; addressing, switch and router configuration, DHCP, basic security and troubleshooting.">Návrh a konfigurace síťových topologií v rámci kurzů Network Technician Career Path &ndash; adresace, konfigurace switchů a routerů, DHCP, základy zabezpečení a troubleshooting.</p>
+          <div class="tl-tags"><span>Cisco IOS</span><span>Packet Tracer</span><span>DHCP</span><span data-en="Security">Zabezpečení</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">🏭</span>
+            <span class="project-ctx" data-en="PROSPECT &bull; work">PROSPECT &bull; práce</span>
+          </div>
+          <h3 data-en="PLC control &amp; HMI visualisation">PLC řízení a HMI vizualizace</h3>
+          <p data-en="Collaborating on programs for Siemens and LOGO! PLCs and creating HMI screens that let operators monitor and control the machinery.">Spolupráce na programech pro PLC Siemens a LOGO! a tvorba obrazovek HMI panelů, přes které obsluha sleduje a ovládá technologii.</p>
+          <div class="tl-tags"><span>Siemens</span><span>LOGO!</span><span>HMI</span><span>PLC</span></div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">💻</span>
+            <span class="project-ctx" data-en="Personal project">Osobní projekt</span>
+          </div>
+          <h3 data-en="This portfolio">Toto portfolio</h3>
+          <p data-en="A bilingual website written from scratch in plain HTML, CSS and JavaScript &ndash; animated network background, typing terminal, responsive layout and automatic deployment via GitHub Pages.">Dvojjazyčný web napsaný od nuly v čistém HTML, CSS a JavaScriptu &ndash; animované síťové pozadí, psací terminál, responzivní layout a automatické nasazení přes GitHub Pages.</p>
+          <div class="tl-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Git</span></div>
+          <a class="project-link" href="https://github.com/Sulii01/portfolio" target="_blank" rel="noopener" data-en="Source code on GitHub ↗">Zdrojový kód na GitHubu ↗</a>
+        </article>
 
       </div>
     </div>
   </section>
 
   <!-- EDUCATION -->
-  <section id="education" class="section">
+  <section id="education" class="section section-dark">
     <div class="container">
-      <h2 class="section-title">Vzdělání</h2>
+      <h2 class="section-title" data-en="Education">Vzdělání</h2>
       <div class="edu-grid">
         <div class="edu-card reveal">
-          <div class="edu-year">2025 – současnost</div>
-          <div class="edu-degree">Ing. – Komunikační a informační technologie</div>
-          <div class="edu-school">Vysoká škola Báňská – TUO</div>
-          <div class="edu-badge current">Probíhá</div>
+          <div class="edu-year" data-en="2025 – present">2025 – současnost</div>
+          <div class="edu-degree" data-en="Ing. (MSc) – Communication and Information Technologies">Ing. – Komunikační a informační technologie</div>
+          <div class="edu-school" data-en="VSB – Technical University of Ostrava">Vysoká škola Báňská – TUO</div>
+          <div class="edu-badge current" data-en="In progress">Probíhá</div>
         </div>
         <div class="edu-card reveal">
           <div class="edu-year">2021 – 2025</div>
-          <div class="edu-degree">Bc. – Telekomunikační technika</div>
-          <div class="edu-school">Vysoká škola Báňská – TUO</div>
-          <div class="edu-badge done">Absolvováno</div>
+          <div class="edu-degree" data-en="Bc. (BSc) – Telecommunication Engineering">Bc. – Telekomunikační technika</div>
+          <div class="edu-school" data-en="VSB – Technical University of Ostrava">Vysoká škola Báňská – TUO</div>
+          <div class="edu-badge done" data-en="Graduated">Absolvováno</div>
         </div>
         <div class="edu-card reveal">
           <div class="edu-year">2017 – 2021</div>
-          <div class="edu-degree">Maturita</div>
-          <div class="edu-school">Střední průmyslová škola Karviná</div>
-          <div class="edu-badge done">Absolvováno</div>
+          <div class="edu-degree" data-en="Secondary school diploma (Maturita)">Maturita</div>
+          <div class="edu-school" data-en="Secondary Technical School Karviná">Střední průmyslová škola Karviná</div>
+          <div class="edu-badge done" data-en="Graduated">Absolvováno</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section section-dark">
+  <section id="skills" class="section">
     <div class="container">
-      <h2 class="section-title">Dovednosti</h2>
+      <h2 class="section-title" data-en="Skills">Dovednosti</h2>
+      <div class="skill-legend reveal">
+        <span><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span> <span data-en="Advanced">Pokročilý</span></span>
+        <span><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span> <span data-en="Intermediate">Středně pokročilý</span></span>
+        <span><span class="sk-dots" data-level="1"><i></i><i></i><i></i></span> <span data-en="Basic">Základy</span></span>
+      </div>
       <div class="skills-wrapper">
-
         <div class="skill-category reveal">
-          <h3 class="cat-title">IT podpora &amp; Helpdesk</h3>
+          <h3 class="cat-title" data-en="IT support &amp; Helpdesk">IT podpora &amp; Helpdesk</h3>
           <div class="skill-bars">
-            <div class="skill-bar"><span class="sk-name">Windows 10/11</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Microsoft 365</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Vzdálená podpora</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Ticketing / Helpdesk</span><div class="bar-track"><div class="bar-fill" data-w="84"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Active Directory</span><div class="bar-track"><div class="bar-fill" data-w="68"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Hardware &amp; tiskárny</span><div class="bar-track"><div class="bar-fill" data-w="86"></div></div></div>
+            <div class="skill-row"><span class="sk-name">Windows 10/11</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Microsoft 365</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="Remote support">Vzdálená podpora</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Ticketing / Helpdesk</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Active Directory</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="Hardware &amp; printers">Hardware &amp; tiskárny</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
           </div>
         </div>
 
         <div class="skill-category reveal">
-          <h3 class="cat-title">Sítě &amp; Infrastruktura</h3>
+          <h3 class="cat-title" data-en="Networking &amp; Infrastructure">Sítě &amp; Infrastruktura</h3>
           <div class="skill-bars">
-            <div class="skill-bar"><span class="sk-name">MikroTik RouterOS</span><div class="bar-track"><div class="bar-fill" data-w="90"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">TCP/IP</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">GPON</span><div class="bar-track"><div class="bar-fill" data-w="82"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">DHCP</span><div class="bar-track"><div class="bar-fill" data-w="85"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Zabbix</span><div class="bar-track"><div class="bar-fill" data-w="78"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Správa sítě</span><div class="bar-track"><div class="bar-fill" data-w="88"></div></div></div>
+            <div class="skill-row"><span class="sk-name">MikroTik RouterOS</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">TCP/IP</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">GPON</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">DHCP</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Zabbix</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="Network administration">Správa sítě</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
           </div>
         </div>
 
         <div class="skill-category reveal">
-          <h3 class="cat-title">Servery &amp; Virtualizace</h3>
+          <h3 class="cat-title" data-en="Servers &amp; Virtualisation">Servery &amp; Virtualizace</h3>
           <div class="skill-bars">
-            <div class="skill-bar"><span class="sk-name">Proxmox</span><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">VMware</span><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Hyper-V</span><div class="bar-track"><div class="bar-fill" data-w="68"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">VirtualBox</span><div class="bar-track"><div class="bar-fill" data-w="72"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Správa serveru</span><div class="bar-track"><div class="bar-fill" data-w="76"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Správa PBX</span><div class="bar-track"><div class="bar-fill" data-w="65"></div></div></div>
+            <div class="skill-row"><span class="sk-name">Proxmox</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">VMware</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Hyper-V</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">VirtualBox</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="Server administration">Správa serveru</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="PBX administration">Správa PBX</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
           </div>
         </div>
 
         <div class="skill-category reveal">
-          <h3 class="cat-title">Programování</h3>
+          <h3 class="cat-title" data-en="Programming">Programování</h3>
           <div class="skill-bars">
-            <div class="skill-bar"><span class="sk-name">Python</span><div class="bar-track"><div class="bar-fill" data-w="70"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Bash</span><div class="bar-track"><div class="bar-fill" data-w="72"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">HTML &amp; CSS</span><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">PHP</span><div class="bar-track"><div class="bar-fill" data-w="60"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">C</span><div class="bar-track"><div class="bar-fill" data-w="58"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Git</span><div class="bar-track"><div class="bar-fill" data-w="74"></div></div></div>
+            <div class="skill-row"><span class="sk-name">Python</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Bash</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">HTML &amp; CSS</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">PHP</span><span class="sk-level"><span class="sk-dots" data-level="1"><i></i><i></i><i></i></span><em data-en="Basic">Základy</em></span></div>
+            <div class="skill-row"><span class="sk-name">C</span><span class="sk-level"><span class="sk-dots" data-level="1"><i></i><i></i><i></i></span><em data-en="Basic">Základy</em></span></div>
+            <div class="skill-row"><span class="sk-name">Git</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
           </div>
         </div>
 
         <div class="skill-category reveal">
-          <h3 class="cat-title">Ostatní</h3>
+          <h3 class="cat-title" data-en="Other">Ostatní</h3>
           <div class="skill-bars">
-            <div class="skill-bar"><span class="sk-name">WordPress</span><div class="bar-track"><div class="bar-fill" data-w="72"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Microsoft Office</span><div class="bar-track"><div class="bar-fill" data-w="80"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Angličtina</span><div class="bar-track"><div class="bar-fill" data-w="75"></div></div></div>
-            <div class="skill-bar"><span class="sk-name">Ruština</span><div class="bar-track"><div class="bar-fill" data-w="60"></div></div></div>
+            <div class="skill-row"><span class="sk-name">WordPress</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name">Microsoft Office</span><span class="sk-level"><span class="sk-dots" data-level="3"><i></i><i></i><i></i></span><em data-en="Advanced">Pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="English">Angličtina</span><span class="sk-level"><span class="sk-dots" data-level="2"><i></i><i></i><i></i></span><em data-en="Intermediate">Středně pokročilý</em></span></div>
+            <div class="skill-row"><span class="sk-name" data-en="Russian">Ruština</span><span class="sk-level"><span class="sk-dots" data-level="1"><i></i><i></i><i></i></span><em data-en="Basic">Základy</em></span></div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- CERTIFICATES -->
-  <section id="certs" class="section">
+  <section id="certs" class="section section-dark">
     <div class="container">
-      <h2 class="section-title">Certifikáty</h2>
+      <h2 class="section-title" data-en="Certificates">Certifikáty</h2>
       <div class="certs-grid">
         <div class="cert-card reveal">
           <div class="cert-icon">📡</div>
           <div class="cert-info">
-            <h3>MW technologie</h3>
-            <span>únor 2026</span>
+            <h3 data-en="Microwave (MW) technologies">MW technologie</h3>
+            <span data-en="February 2026">únor 2026</span>
           </div>
         </div>
         <a class="cert-card cert-link reveal" href="certs/coursera-wordpress.pdf" target="_blank" rel="noopener">
           <div class="cert-icon">🌐</div>
           <div class="cert-info">
             <h3>Build a free website with WordPress</h3>
-            <span>Coursera &mdash; prosinec 2024</span>
-            <span class="cert-view">Zobrazit certifikát ↗</span>
+            <span data-en="Coursera &mdash; December 2024">Coursera &mdash; prosinec 2024</span>
+            <span class="cert-view" data-en="View certificate ↗">Zobrazit certifikát ↗</span>
           </div>
         </a>
         <div class="cert-card reveal">
           <div class="cert-icon">⚽</div>
           <div class="cert-info">
-            <h3>Trenérská licence FAČR (C)</h3>
-            <span>listopad 2022</span>
+            <h3 data-en="FAČR Coaching Licence (C)">Trenérská licence FAČR (C)</h3>
+            <span data-en="November 2022">listopad 2022</span>
           </div>
         </div>
         <div class="cert-card reveal">
           <div class="cert-icon">⚙️</div>
           <div class="cert-info">
-            <h3>CNC Programování (Pokročilý)</h3>
+            <h3 data-en="CNC Programming (Advanced)">CNC Programování (Pokročilý)</h3>
             <span>2019 – 2020</span>
           </div>
         </div>
       </div>
 
       <div class="badges-block">
-        <h3 class="badges-title"><span class="badges-logo">Cisco</span> Networking Academy &mdash; odznaky</h3>
-        <p class="badges-sub">Ověřené digitální odznaky vydané přes platformu Credly.</p>
+        <h3 class="badges-title"><span class="badges-logo">Cisco</span> Networking Academy &mdash; <span data-en="badges">odznaky</span></h3>
+        <p class="badges-sub" data-en="Verified digital badges issued via the Credly platform.">Ověřené digitální odznaky vydané přes platformu Credly.</p>
         <div class="badges-grid">
           <div class="badge-card reveal">
             <div data-iframe-width="200" data-iframe-height="245" data-share-badge-id="28d0f22e-8030-4103-91bf-d1410f8acfae" data-share-badge-host="https://www.credly.com"></div>
             <span class="badge-name">Networking Basics</span>
             <div class="badge-links">
-              <a href="certs/cisco-networking-basics-2025.pdf" target="_blank" rel="noopener">Certifikát PDF ↗</a>
+              <a href="certs/cisco-networking-basics-2025.pdf" target="_blank" rel="noopener" data-en="Certificate PDF ↗">Certifikát PDF ↗</a>
               <a href="https://www.credly.com/badges/28d0f22e-8030-4103-91bf-d1410f8acfae/public_url" target="_blank" rel="noopener">Credly ↗</a>
             </div>
           </div>
@@ -381,7 +437,7 @@
             <div data-iframe-width="200" data-iframe-height="245" data-share-badge-id="c4c03121-5ca1-4568-b1a5-b8e1ccb10e86" data-share-badge-host="https://www.credly.com"></div>
             <span class="badge-name">Networking Devices and Initial Configuration</span>
             <div class="badge-links">
-              <a href="certs/cisco-networking-devices.pdf" target="_blank" rel="noopener">Certifikát PDF ↗</a>
+              <a href="certs/cisco-networking-devices.pdf" target="_blank" rel="noopener" data-en="Certificate PDF ↗">Certifikát PDF ↗</a>
               <a href="https://www.credly.com/badges/c4c03121-5ca1-4568-b1a5-b8e1ccb10e86/public_url" target="_blank" rel="noopener">Credly ↗</a>
             </div>
           </div>
@@ -389,7 +445,7 @@
             <div data-iframe-width="200" data-iframe-height="245" data-share-badge-id="062bcd3d-9797-4b78-a935-d937dc6ebf49" data-share-badge-host="https://www.credly.com"></div>
             <span class="badge-name">Network Technician Career Path</span>
             <div class="badge-links">
-              <a href="certs/cisco-network-technician.pdf" target="_blank" rel="noopener">Certifikát PDF ↗</a>
+              <a href="certs/cisco-network-technician.pdf" target="_blank" rel="noopener" data-en="Certificate PDF ↗">Certifikát PDF ↗</a>
               <a href="https://www.credly.com/badges/062bcd3d-9797-4b78-a935-d937dc6ebf49/public_url" target="_blank" rel="noopener">Credly ↗</a>
             </div>
           </div>
@@ -397,7 +453,7 @@
             <div data-iframe-width="200" data-iframe-height="245" data-share-badge-id="1bc505bf-a6f2-4e94-b2cc-e42a114a4b92" data-share-badge-host="https://www.credly.com"></div>
             <span class="badge-name">Network Support and Security</span>
             <div class="badge-links">
-              <a href="certs/cisco-network-support-security.pdf" target="_blank" rel="noopener">Certifikát PDF ↗</a>
+              <a href="certs/cisco-network-support-security.pdf" target="_blank" rel="noopener" data-en="Certificate PDF ↗">Certifikát PDF ↗</a>
               <a href="https://www.credly.com/badges/1bc505bf-a6f2-4e94-b2cc-e42a114a4b92/public_url" target="_blank" rel="noopener">Credly ↗</a>
             </div>
           </div>
@@ -407,33 +463,33 @@
   </section>
 
   <!-- HOBBIES -->
-  <section id="hobbies" class="section section-dark">
+  <section id="hobbies" class="section">
     <div class="container">
-      <h2 class="section-title">Koníčky</h2>
+      <h2 class="section-title" data-en="Hobbies">Koníčky</h2>
       <div class="hobbies-grid">
         <div class="hobby-card reveal">
           <div class="hobby-icon">🏓</div>
-          <h3>Stolní tenis</h3>
-          <p>Závodní hráč. Rozvíjí rychlost reakce, strategické myšlení a soustředění.</p>
+          <h3 data-en="Table tennis">Stolní tenis</h3>
+          <p data-en="Competitive player. Builds reaction speed, strategic thinking and focus.">Závodní hráč. Rozvíjí rychlost reakce, strategické myšlení a soustředění.</p>
         </div>
         <div class="hobby-card reveal">
           <div class="hobby-icon">⚽</div>
-          <h3>Fotbal</h3>
-          <p>Zkušenosti s týmovou spoluprací a vytrvalostním tréninkem.</p>
+          <h3 data-en="Football">Fotbal</h3>
+          <p data-en="Experience with teamwork and endurance training.">Zkušenosti s týmovou spoluprací a vytrvalostním tréninkem.</p>
         </div>
         <div class="hobby-card reveal">
           <div class="hobby-icon">🎹</div>
-          <h3>Hudba</h3>
-          <p>Akordeon a klavír &mdash; rozvíjejí kreativitu, smysl pro rytmus a jemnou motoriku.</p>
+          <h3 data-en="Music">Hudba</h3>
+          <p data-en="Accordion and piano &mdash; developing creativity, a sense of rhythm and fine motor skills.">Akordeon a klavír &mdash; rozvíjejí kreativitu, smysl pro rytmus a jemnou motoriku.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section">
+  <section id="contact" class="section section-dark">
     <div class="container">
-      <h2 class="section-title">Kontakt</h2>
+      <h2 class="section-title" data-en="Contact">Kontakt</h2>
       <div class="contact-wrapper">
         <div class="contact-info reveal">
           <div class="contact-item">
@@ -446,24 +502,24 @@
           </div>
           <div class="contact-item">
             <span class="c-icon">📍</span>
-            <span>Bystřice 1447, Bystřice nad Olší</span>
+            <span data-en="Bystřice nad Olší, Czech Republic">Bystřice nad Olší</span>
           </div>
         </div>
         <form class="contact-form reveal" id="contact-form">
           <div class="form-group">
-            <input type="text" id="f-name" placeholder="Vaše jméno" required />
-            <label for="f-name">Vaše jméno</label>
+            <input type="text" id="f-name" placeholder="Vaše jméno" data-en-placeholder="Your name" required />
+            <label for="f-name" data-en="Your name">Vaše jméno</label>
           </div>
           <div class="form-group">
             <input type="email" id="f-email" placeholder="Email" required />
             <label for="f-email">Email</label>
           </div>
           <div class="form-group">
-            <textarea id="f-msg" rows="5" placeholder="Zpráva" required></textarea>
-            <label for="f-msg">Zpráva</label>
+            <textarea id="f-msg" rows="5" placeholder="Zpráva" data-en-placeholder="Message" required></textarea>
+            <label for="f-msg" data-en="Message">Zpráva</label>
           </div>
-          <button type="submit" class="btn btn-primary">Odeslat zprávu</button>
-          <p class="form-note">* Formulář je demonstrační – pro kontakt použijte email výše.</p>
+          <button type="submit" class="btn btn-primary" data-en="Send message">Odeslat zprávu</button>
+          <p class="form-note" data-en="* This form is a demo – please use the email above to get in touch.">* Formulář je demonstrační – pro kontakt použijte email výše.</p>
         </form>
       </div>
     </div>
@@ -475,7 +531,7 @@
     <a href="#hero" class="back-to-top" aria-label="Zpět nahoru">↑</a>
   </footer>
 
-  <script src="js/main.js?v=20261027f"></script>
+  <script src="js/main.js?v=20261027g"></script>
   <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
