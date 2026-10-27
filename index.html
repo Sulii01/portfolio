@@ -16,7 +16,7 @@
   <meta property="og:image:alt" content="Bc. Jan Šulák – IT End User Support" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080c14'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-weight='700' font-size='30' fill='%2300e5ff'%3EJS%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="css/style.css?v=20261027i" />
+  <link rel="stylesheet" href="css/style.css?v=20261027j" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
@@ -247,7 +247,7 @@
       <p class="section-lead reveal" data-en="A selection of projects and hands-on work from my jobs, studies and courses.">Výběr projektů a praktické práce ze zaměstnání, studia a kurzů.</p>
       <div class="projects-grid">
 
-        <article class="project-card project-featured reveal">
+        <article class="project-card reveal">
           <div class="project-head">
             <span class="project-icon">🛰️</span>
             <span class="project-ctx" data-en="VŠB-TUO &bull; MaDS">VŠB-TUO &bull; MaDS</span>
@@ -258,6 +258,48 @@
           <div class="project-links">
             <a href="https://sulii01.github.io/mads-networking-isp-lab/" target="_blank" rel="noopener" data-en="View project ↗">Zobrazit projekt ↗</a>
             <a href="https://github.com/Sulii01/mads-networking-isp-lab" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">☁️</span>
+            <span class="project-ctx" data-en="VŠB-TUO &bull; Virtualisation II">VŠB-TUO &bull; Virtualizace II</span>
+          </div>
+          <h3 data-en="Nextcloud across three VMs">Nextcloud na třech virtuálech</h3>
+          <p data-en="A business file-sharing cloud split across three VMs connected by an encrypted WireGuard VPN: Nextcloud behind a Caddy reverse proxy (HTTPS), a backend with MariaDB, Redis and ClamAV antivirus, and a dedicated Collabora Online office server. Everything runs in Docker.">Firemní cloud pro sdílení souborů rozdělený na tři virtuály propojené šifrovanou VPN WireGuard: Nextcloud s reverzní proxy Caddy (HTTPS), backend s MariaDB, Redisem a antivirem ClamAV a samostatný stroj s online kanceláří Collabora. Vše běží v Dockeru.</p>
+          <div class="tl-tags"><span>Nextcloud</span><span>Docker</span><span>WireGuard</span><span>Caddy</span><span>MariaDB</span><span>Redis</span><span>ClamAV</span><span>Collabora</span></div>
+          <div class="project-links">
+            <a href="https://sulii01.github.io/VIR_Project/" target="_blank" rel="noopener" data-en="View project ↗">Zobrazit projekt ↗</a>
+            <a href="https://github.com/Sulii01/VIR_Project" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">🔑</span>
+            <span class="project-ctx" data-en="VŠB-TUO &bull; PKS II">VŠB-TUO &bull; PKS II</span>
+          </div>
+          <h3 data-en="RFID authentication server">Autentizační server s RFID</h3>
+          <p data-en="An access control system where the server decides: an RC522 reader with Arduino reads the card, a Raspberry Pi sends its UID over an SSH tunnel and VPN to a university server, where a PHP API checks it in MariaDB, logs the attempt and returns allowed/denied. Cards are managed in a web admin with login.">Přístupový systém, ve kterém rozhoduje server: čtečka RC522 s Arduinem přečte kartu, Raspberry Pi pošle její UID přes SSH tunel a VPN na školní server, kde PHP API kartu ověří v MariaDB, zapíše pokus do historie a vrátí povoleno/zamítnuto. Karty se spravují přes webové rozhraní s přihlášením.</p>
+          <div class="tl-tags"><span>RFID RC522</span><span>Arduino</span><span>Raspberry Pi</span><span>PHP API</span><span>MariaDB</span><span data-en="SSH tunnel">SSH tunel</span></div>
+          <div class="project-links">
+            <a href="https://sulii01.github.io/PKS_II_Project_2/" target="_blank" rel="noopener" data-en="View project ↗">Zobrazit projekt ↗</a>
+            <a href="https://github.com/Sulii01/PKS_II_Project_2" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-head">
+            <span class="project-icon">📊</span>
+            <span class="project-ctx" data-en="VŠB-TUO &bull; PKS II">VŠB-TUO &bull; PKS II</span>
+          </div>
+          <h3 data-en="Server monitoring with Zabbix">Monitoring serveru pomocí Zabbixu</h3>
+          <p data-en="Installing and configuring Zabbix server 7.0 LTS with MariaDB and Apache on Ubuntu Server: user management, monitoring the VM itself and a Raspberry Pi with Arduino on a home network, moving the web UI to port 8080 and a custom domain, access over IPv6 and VPN.">Instalace a konfigurace Zabbix serveru 7.0 LTS s MariaDB a Apache na Ubuntu serveru: správa uživatelů, monitoring samotného virtuálu i Raspberry Pi s Arduinem v domácí síti, přesun webového rozhraní na port 8080 a vlastní doménu, přístup přes IPv6 a VPN.</p>
+          <div class="tl-tags"><span>Zabbix 7.0</span><span>Ubuntu Server</span><span>MariaDB</span><span>Apache</span><span>IPv6</span><span>Raspberry Pi</span></div>
+          <div class="project-links">
+            <a href="https://sulii01.github.io/PKS_II_Project_1/" target="_blank" rel="noopener" data-en="View project ↗">Zobrazit projekt ↗</a>
+            <a href="https://github.com/Sulii01/PKS_II_Project_1" target="_blank" rel="noopener">GitHub ↗</a>
           </div>
         </article>
 
@@ -552,7 +594,7 @@
     <a href="#hero" class="back-to-top" aria-label="Zpět nahoru">↑</a>
   </footer>
 
-  <script src="js/main.js?v=20261027i"></script>
+  <script src="js/main.js?v=20261027j"></script>
   <script type="text/javascript" async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
