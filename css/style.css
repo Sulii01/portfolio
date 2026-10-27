@@ -597,7 +597,7 @@ a:hover { color: var(--white); }
 =========================== */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
 }
 .cert-card {
@@ -619,9 +619,7 @@ a:hover { color: var(--white); }
 .cert-info h3 { font-size: .95rem; color: var(--white); margin-bottom: .25rem; }
 .cert-info span { font-size: .78rem; color: var(--text-dim); font-family: var(--font-mono); }
 
-@media (max-width: 960px) {
-  .certs-grid { grid-template-columns: 1fr 1fr; }
-}
+
 @media (max-width: 560px) {
   .certs-grid { grid-template-columns: 1fr; }
 }
@@ -992,3 +990,4 @@ footer {
   text-align: center;
   flex-grow: 1; /* odkazy zarovnané dole napříč kartami */
 }
+.badge-card > :nth-child(2) { margin-top: auto; }
