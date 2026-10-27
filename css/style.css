@@ -951,17 +951,23 @@ footer {
   margin-bottom: 1.8rem;
 }
 .badges-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 228px);
   justify-content: center;
   gap: 1.2rem;
+}
+@media (max-width: 1100px) {
+  .badges-grid { grid-template-columns: repeat(2, 228px); }
+}
+@media (max-width: 540px) {
+  .badges-grid { grid-template-columns: 228px; }
 }
 .badge-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: .8rem;
-  padding: .8rem .8rem 1rem;
+  gap: .7rem;
+  padding: .8rem .8rem .9rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -974,14 +980,12 @@ footer {
 }
 /* Credly vkládá iframe s bílým pozadím – zaoblíme ho do stylu karet */
 .badge-card iframe { border-radius: 8px; background: #fff; }
-.badge-verify {
+.badge-links {
+  display: flex;
+  gap: 1rem;
   font-family: var(--font-mono);
   font-size: .75rem;
 }
-@media (max-width: 560px) {
-  .badges-grid { justify-content: center; }
-}
-.badge-card { width: 248px; }
 .badge-name {
   color: var(--white);
   font-weight: 600;
@@ -990,4 +994,3 @@ footer {
   text-align: center;
   flex-grow: 1; /* odkazy zarovnané dole napříč kartami */
 }
-.badge-card > :nth-child(2) { margin-top: auto; }
