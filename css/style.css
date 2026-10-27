@@ -932,3 +932,53 @@ footer {
   font-size: .75rem;
 }
 .cert-link:hover .cert-view { color: var(--white); }
+
+/* ===========================
+   CREDLY BADGES
+=========================== */
+.badges-block { margin-top: 4rem; }
+.badges-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-family: var(--font-mono);
+  margin-bottom: .4rem;
+}
+.badges-logo { color: var(--accent); }
+.badges-sub {
+  font-size: .85rem;
+  color: var(--text-dim);
+  margin-bottom: 1.8rem;
+}
+.badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+.badge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  padding: 1.2rem 1.2rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.badge-card:hover {
+  border-color: rgba(0,229,255,.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.25);
+}
+/* Credly vkládá iframe s bílým pozadím – zaoblíme ho do stylu karet */
+.badge-card iframe { border-radius: 8px; background: #fff; }
+.badge-verify {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+}
+@media (max-width: 560px) {
+  .badges-grid { justify-content: center; }
+}
