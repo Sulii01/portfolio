@@ -7,8 +7,9 @@
   let W, H, nodes = [], RAF;
   const mouse = { x: null, y: null };
   const MOUSE_DIST = 200;
-  const NODE_COUNT = 70;
-  const MAX_DIST   = 160;
+  const MOBILE     = window.innerWidth < 768;
+  const NODE_COUNT = MOBILE ? 35 : 70;
+  const MAX_DIST   = MOBILE ? 120 : 160;
   const ACCENT     = '0,229,255';
 
   function resize() {
@@ -73,6 +74,12 @@
     }
     RAF = requestAnimationFrame(draw);
   }
+
+  // Pozastavit animaci, když záložka není vidět (šetří CPU a baterii)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(RAF);
+    else RAF = requestAnimationFrame(draw);
+  });
 
   window.addEventListener('resize', () => { resize(); init(); });
   window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
@@ -161,28 +168,10 @@ statNums.forEach(el => counterIO.observe(el));
 
 
 /* ===========================
-   SKILL BARS
-=========================== */
-const barFills = document.querySelectorAll('.bar-fill');
-const barIO = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.width = entry.target.dataset.w + '%';
-      barIO.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.3 });
-barFills.forEach(el => barIO.observe(el));
-
-
-/* ===========================
    TERMINAL TYPEWRITER
 =========================== */
-(function () {
-  const body = document.getElementById('terminal-body');
-  if (!body) return;
-
-  const lines = [
+const TERMINAL_LINES = {
+  cs: [
     { type: 'prompt', text: 'whoami' },
     { type: 'out',    text: 'jan.sulak — IT End User Support, Ing. student' },
     { type: 'prompt', text: 'cat /etc/company' },
@@ -195,59 +184,79 @@ barFills.forEach(el => barIO.observe(el));
     { type: 'out',    text: 'Proxmox  | Python | Bash  | Git' },
     { type: 'prompt', text: 'echo $MOTTO' },
     { type: 'ok',     text: '✔ Každý problém má řešení' },
-    { type: 'prompt', text: '' },
-  ];
+  ],
+  en: [
+    { type: 'prompt', text: 'whoami' },
+    { type: 'out',    text: 'jan.sulak — IT End User Support, MSc student' },
+    { type: 'prompt', text: 'cat /etc/company' },
+    { type: 'out',    text: 'Euromedia Group, a.s.' },
+    { type: 'prompt', text: 'ticket --status #4021' },
+    { type: 'ok',     text: '✔ Resolved — printer back online (2 min)' },
+    { type: 'prompt', text: 'cat skills.txt' },
+    { type: 'out',    text: 'Windows | M365 | AD     | Helpdesk' },
+    { type: 'out',    text: 'MikroTik | GPON | TCP/IP | Zabbix' },
+    { type: 'out',    text: 'Proxmox  | Python | Bash  | Git' },
+    { type: 'prompt', text: 'echo $MOTTO' },
+    { type: 'ok',     text: '✔ Every problem has a solution' },
+  ],
+};
 
-  let lineIdx = 0, charIdx = 0;
-  let currentEl = null;
-  let cursorEl  = null;
+const terminal = (function () {
+  const body = document.getElementById('terminal-body');
+  let run = 0; // při restartu zneplatní běžící časovače
 
-  function nextLine() {
-    if (lineIdx >= lines.length) {
+  function start(lang) {
+    if (!body) return;
+    const id = ++run;
+    const lines = TERMINAL_LINES[lang] || TERMINAL_LINES.cs;
+    body.innerHTML = '';
+    let lineIdx = 0, charIdx = 0, currentEl = null, cursorEl = null;
+
+    function later(fn, ms) { setTimeout(() => { if (id === run) fn(); }, ms); }
+
+    function nextLine() {
+      if (lineIdx >= lines.length) {
+        if (cursorEl) cursorEl.remove();
+        const end = document.createElement('div');
+        end.innerHTML = '<span class="t-prompt">jan@network:~$ </span><span class="t-cursor"></span>';
+        body.appendChild(end);
+        body.scrollTop = body.scrollHeight;
+        return;
+      }
+      const line = lines[lineIdx];
+      const row  = document.createElement('div');
       if (cursorEl) cursorEl.remove();
-      const end = document.createElement('span');
-      end.className = 't-prompt';
-      end.innerHTML = '<span class="t-prompt">jan@network:~$ </span><span class="t-cursor"></span>';
-      body.appendChild(end);
-      return;
+      if (line.type === 'prompt') {
+        row.innerHTML = '<span class="t-prompt">jan@network:~$ </span><span class="t-cmd"></span>';
+        body.appendChild(row);
+        currentEl = row.querySelector('.t-cmd');
+        cursorEl = document.createElement('span');
+        cursorEl.className = 't-cursor';
+        row.appendChild(cursorEl);
+      } else {
+        row.className = `t-${line.type}`;
+        body.appendChild(row);
+        currentEl = row;
+      }
+      typeChars(line.text);
     }
 
-    const line = lines[lineIdx];
-    const row  = document.createElement('div');
-
-    if (line.type === 'prompt') {
-      row.innerHTML = `<span class="t-prompt">jan@network:~$ </span><span class="t-cmd"></span>`;
-      body.appendChild(row);
-      currentEl = row.querySelector('.t-cmd');
-      if (cursorEl) cursorEl.remove();
-      cursorEl = document.createElement('span');
-      cursorEl.className = 't-cursor';
-      row.appendChild(cursorEl);
-      typeChars(line.text);
-    } else {
-      row.className = `t-${line.type}`;
-      body.appendChild(row);
-      currentEl = row;
-      if (cursorEl) cursorEl.remove();
-      typeChars(line.text);
+    function typeChars(text) {
+      if (charIdx < text.length) {
+        currentEl.textContent += text[charIdx++];
+        body.scrollTop = body.scrollHeight;
+        later(() => typeChars(text), 38 + Math.random() * 30);
+      } else {
+        charIdx = 0;
+        lineIdx++;
+        later(nextLine, lines[lineIdx - 1].type === 'prompt' ? 500 : 120);
+      }
     }
-    body.scrollTop = body.scrollHeight;
+
+    later(nextLine, 800);
   }
 
-  function typeChars(text) {
-    if (charIdx < text.length) {
-      currentEl.textContent += text[charIdx++];
-      body.scrollTop = body.scrollHeight;
-      setTimeout(typeChars.bind(null, text), 38 + Math.random() * 30);
-    } else {
-      charIdx = 0;
-      lineIdx++;
-      const delay = lines[lineIdx - 1].type === 'prompt' ? 500 : 120;
-      setTimeout(nextLine, delay);
-    }
-  }
-
-  setTimeout(nextLine, 800);
+  return { start };
 })();
 
 
@@ -258,7 +267,7 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   e.preventDefault();
   const btn = this.querySelector('button[type=submit]');
   const orig = btn.textContent;
-  btn.textContent = '✔ Odesláno!';
+  btn.textContent = document.documentElement.lang === 'en' ? '✔ Sent!' : '✔ Odesláno!';
   btn.style.background = '#28c840';
   btn.style.borderColor = '#28c840';
   btn.style.color = '#000';
@@ -293,15 +302,16 @@ window.addEventListener('scroll', () => {
 (function () {
   const el = document.getElementById('role-rotator');
   if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const roles = [
-    'IT End User Support',
-    'Síťový specialista',
-    'Telekomunikační technik',
-    'Ing. student @ VŠB-TUO',
-  ];
+  const ROLES = {
+    cs: ['IT End User Support', 'Síťový specialista', 'Telekomunikační technik', 'Ing. student @ VŠB-TUO'],
+    en: ['IT End User Support', 'Network specialist', 'Telecommunications technician', 'MSc student @ VŠB-TUO'],
+  };
+  let roles = ROLES.cs;
   let r = 0, c = roles[0].length, deleting = true;
 
   function tick() {
+    roles = ROLES[document.documentElement.lang] || ROLES.cs;
+    if (r >= roles.length) r = 0;
     const word = roles[r];
     if (deleting) {
       el.textContent = word.slice(0, --c);
@@ -328,3 +338,58 @@ document.querySelectorAll('.tl-card, .edu-card, .cert-card, .hobby-card, .stat-c
     card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
   });
 });
+
+
+/* ===========================
+   LANGUAGE SWITCH (CZ / EN)
+   Český text je přímo v HTML, anglický v atributu data-en.
+=========================== */
+(function () {
+  const META = {
+    cs: {
+      title: 'Bc. Jan Šulák – Portfolio',
+      desc:  'Jan Šulák – IT End User Support v Euromedia Group, a.s., absolvent VŠB-TUO (Telekomunikační technika). Sítě, MikroTik, GPON, Windows, Microsoft 365.',
+      toggle: 'Switch language to English',
+      top: 'Zpět nahoru',
+    },
+    en: {
+      title: 'Bc. Jan Šulák – Portfolio',
+      desc:  'Jan Šulák – IT End User Support at Euromedia Group, a.s., VŠB-TUO graduate (Telecommunication Engineering). Networking, MikroTik, GPON, Windows, Microsoft 365.',
+      toggle: 'Přepnout do češtiny',
+      top: 'Back to top',
+    },
+  };
+  const toggle = document.getElementById('lang-toggle');
+  const descEl = document.querySelector('meta[name="description"]');
+  const topEl  = document.querySelector('.back-to-top');
+
+  function apply(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      if (el.dataset.cs === undefined) el.dataset.cs = el.innerHTML;
+      el.innerHTML = lang === 'en' ? el.dataset.en : el.dataset.cs;
+    });
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      if (el.dataset.csPlaceholder === undefined) el.dataset.csPlaceholder = el.placeholder;
+      el.placeholder = lang === 'en' ? el.dataset.enPlaceholder : el.dataset.csPlaceholder;
+    });
+    document.title = META[lang].title;
+    if (descEl) descEl.content = META[lang].desc;
+    toggle.setAttribute('aria-label', META[lang].toggle);
+    if (topEl) topEl.setAttribute('aria-label', META[lang].top);
+    terminal.start(lang);
+  }
+
+  let lang = 'cs';
+  try {
+    const q = new URLSearchParams(location.search).get('lang');
+    lang = q === 'en' || q === 'cs' ? q : (localStorage.getItem('lang') || 'cs');
+  } catch (e) { /* bez localStorage zůstane čeština */ }
+  apply(lang);
+
+  toggle.addEventListener('click', () => {
+    lang = lang === 'cs' ? 'en' : 'cs';
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    apply(lang);
+  });
+})();
