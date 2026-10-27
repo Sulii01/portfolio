@@ -1156,3 +1156,32 @@ html[lang="en"] .lang-opt[data-lang="en"] { color: var(--accent); font-weight: 7
   .project-card { padding: 1.5rem; }
 }
 .tl-more .tl-dot { top: 1.3rem; }
+
+/* ===========================
+   CV + SOCIÁLNÍ SÍTĚ
+=========================== */
+.btn-ghost {
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  border-color: rgba(255,255,255,.15);
+}
+.btn-ghost:hover { color: var(--white); border-color: var(--accent); box-shadow: 0 0 24px rgba(0,229,255,.2); }
+.btn-icon { font-size: .95em; }
+.social-links { display: flex; gap: .8rem; margin-top: 1.6rem; }
+.social-links a {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 10px;
+  color: var(--text-dim);
+  background: rgba(0,229,255,.06);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.social-links a:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 0 18px rgba(0,229,255,.25); }
+.social-links svg { width: 20px; height: 20px; fill: currentColor; }
+.social-links[hidden], [data-link][hidden] { display: none !important; }
+.contact-cv { align-self: flex-start; }
+.contact-social { margin-top: .4rem; }
+@media (max-width: 960px) {
+  .hero-social { justify-content: center; }
+}

@@ -1,4 +1,17 @@
 /* ===========================
+   ODKAZY A CV
+   Prázdná hodnota = tlačítko / ikona se na webu nezobrazí.
+   CV soubory patří do složky cv/.
+=========================== */
+const LINKS = {
+  cvCs:     '',  // např. 'cv/Jan-Sulak-CV-CZ.pdf'
+  cvEn:     '',  // např. 'cv/Jan-Sulak-CV-EN.pdf'
+  linkedin: '',  // např. 'https://www.linkedin.com/in/...'
+  github:   '',  // např. 'https://github.com/...'
+  credly:   '',  // např. 'https://www.credly.com/users/...'
+};
+
+/* ===========================
    PARTICLE NETWORK CANVAS
 =========================== */
 (function () {
@@ -378,6 +391,20 @@ document.querySelectorAll('.tl-card, .edu-card, .cert-card, .hobby-card, .stat-c
     toggle.setAttribute('aria-label', META[lang].toggle);
     if (topEl) topEl.setAttribute('aria-label', META[lang].top);
     terminal.start(lang);
+    applyLinks(lang);
+  }
+
+  function applyLinks(lang) {
+    // CV v jazyce stránky, jinak to druhé, pokud existuje
+    const cv = lang === 'en' ? (LINKS.cvEn || LINKS.cvCs) : (LINKS.cvCs || LINKS.cvEn);
+    document.querySelectorAll('[data-link]').forEach(el => {
+      const url = el.dataset.link === 'cv' ? cv : LINKS[el.dataset.link];
+      el.hidden = !url;
+      if (url) el.href = url;
+    });
+    document.querySelectorAll('.social-links').forEach(box => {
+      box.hidden = !box.querySelector('[data-link]:not([hidden])');
+    });
   }
 
   let lang = 'cs';
