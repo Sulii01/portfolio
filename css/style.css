@@ -983,3 +983,12 @@ footer {
 @media (max-width: 560px) {
   .badges-grid { justify-content: center; }
 }
+.badge-card { width: 248px; }
+.badge-name {
+  color: var(--white);
+  font-weight: 600;
+  font-size: .9rem;
+  line-height: 1.35;
+  text-align: center;
+  flex-grow: 1; /* odkazy zarovnané dole napříč kartami */
+}
