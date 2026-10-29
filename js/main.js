@@ -11,6 +11,18 @@ const LINKS = {
   credly:   'https://www.credly.com/users/jan-sulak.5270b127',
 };
 
+/* Statistika návštěvnosti (GoatCounter, bez cookies).
+   Vyplňte kód z adresy https://KOD.goatcounter.com – prázdné = vypnuto. */
+const GOATCOUNTER = '';
+
+if (GOATCOUNTER) {
+  const gc = document.createElement('script');
+  gc.async = true;
+  gc.src = 'https://gc.zgo.at/count.js';
+  gc.dataset.goatcounter = `https://${GOATCOUNTER}.goatcounter.com/count`;
+  document.head.appendChild(gc);
+}
+
 /* ===========================
    PARTICLE NETWORK CANVAS
 =========================== */
@@ -400,4 +412,24 @@ document.querySelectorAll('.tl-card, .edu-card, .cert-card, .hobby-card, .stat-c
     try { localStorage.setItem('lang', lang); } catch (e) {}
     apply(lang);
   });
+})();
+
+
+/* ===========================
+   CREDLY ODZNAKY – načíst až při přiblížení
+=========================== */
+(function () {
+  const block = document.querySelector('.badges-block');
+  if (!block) return;
+  const load = () => {
+    const sc = document.createElement('script');
+    sc.async = true;
+    sc.src = 'https://cdn.credly.com/assets/utilities/embed.js';
+    document.body.appendChild(sc);
+  };
+  if (!('IntersectionObserver' in window)) return load();
+  const obs = new IntersectionObserver(entries => {
+    if (entries.some(e => e.isIntersecting)) { obs.disconnect(); load(); }
+  }, { rootMargin: '600px 0px' });
+  obs.observe(block);
 })();
