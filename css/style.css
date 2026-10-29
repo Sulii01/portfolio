@@ -584,7 +584,7 @@ a:hover { color: var(--white); }
   font-style: normal;
   font-size: .75rem;
   color: var(--text-dim);
-  min-width: 9.5rem;
+  min-width: 7.5rem;
   text-align: right;
 }
 @media (max-width: 768px) {
