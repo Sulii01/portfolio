@@ -395,8 +395,8 @@ document.querySelectorAll('.tl-card, .edu-card, .cert-card, .hobby-card, .stat-c
   }
 
   function applyLinks(lang) {
-    // CV v jazyce stránky, jinak to druhé, pokud existuje
-    const cv = lang === 'en' ? (LINKS.cvEn || LINKS.cvCs) : (LINKS.cvCs || LINKS.cvEn);
+    // CV jen v jazyce stránky (česká verze → české CV, anglická → anglické)
+    const cv = lang === 'en' ? LINKS.cvEn : LINKS.cvCs;
     document.querySelectorAll('[data-link]').forEach(el => {
       const url = el.dataset.link === 'cv' ? cv : LINKS[el.dataset.link];
       el.hidden = !url;
