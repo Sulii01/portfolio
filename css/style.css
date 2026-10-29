@@ -1162,3 +1162,47 @@ html[lang="en"] .lang-opt[data-lang="en"] { color: var(--accent); font-weight: 7
   font-family: var(--font-mono);
   font-size: .8rem;
 }
+
+/* ===========================
+   ZÁVĚREČNÉ PRÁCE
+=========================== */
+.section-flow { padding-bottom: 0; }
+.theses-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.thesis-card {
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+    linear-gradient(135deg, rgba(0,229,255,.5), rgba(123,47,255,.5)) border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 1.8rem 2rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.thesis-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,229,255,.08); }
+.thesis-upcoming {
+  background: var(--bg-card);
+  border: 1px dashed rgba(0,229,255,.3);
+}
+.thesis-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem; }
+.thesis-icon {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  font-size: 1.6rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(0,229,255,.12), rgba(123,47,255,.12));
+  border: 1px solid var(--border);
+}
+.thesis-type { font-family: var(--font-mono); font-size: .75rem; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+.thesis-title { color: var(--white); font-size: 1.2rem; margin: .4rem 0 .5rem; line-height: 1.35; }
+.thesis-meta { font-size: .86rem; color: var(--text-dim); margin-bottom: 1.2rem; flex-grow: 1; }
+.thesis-link { font-family: var(--font-mono); font-size: .8rem; }
+.thesis-soon { font-size: .82rem; color: var(--text-dim); font-style: italic; }
+@media (max-width: 768px) {
+  .theses-grid { grid-template-columns: 1fr; }
+  .thesis-card { padding: 1.5rem; }
+}
