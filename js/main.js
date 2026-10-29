@@ -4,8 +4,8 @@
    CV soubory patří do složky cv/.
 =========================== */
 const LINKS = {
-  cvCs:     'cv/Jan-Sulak-CV-CZ.pdf',
-  cvEn:     'cv/Jan-Sulak-CV-EN.pdf',
+  cvCs:     'cv/Šulák_Životopis.pdf',
+  cvEn:     'cv/Šulák_CV.pdf',
   linkedin: '',  // např. 'https://www.linkedin.com/in/...'
   github:   '',  // např. 'https://github.com/...'
   credly:   '',  // např. 'https://www.credly.com/users/...'
