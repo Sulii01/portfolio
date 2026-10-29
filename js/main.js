@@ -6,8 +6,8 @@
 const LINKS = {
   cvCs:     'cv/Šulák_Životopis.pdf',
   cvEn:     'cv/Šulák_CV.pdf',
-  linkedin: '',  // např. 'https://www.linkedin.com/in/...'
-  github:   '',  // např. 'https://github.com/...'
+  linkedin: 'www.linkedin.com/in/jan-šulák',  // např. 'https://www.linkedin.com/in/...'
+  github:   'https://github.com/Sulii01',  // např. 'https://github.com/...'
   credly:   '',  // např. 'https://www.credly.com/users/...'
 };
 
