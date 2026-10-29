@@ -8,7 +8,7 @@ const LINKS = {
   cvEn:     'cv/Šulák_CV.pdf',
   linkedin: 'https://www.linkedin.com/in/jan-šulák',
   github:   'https://github.com/Sulii01',
-  credly:   'https://www.credly.com/users/jan-sulak.5270b127',  // např. 'https://www.credly.com/users/...'
+  credly:   'https://www.credly.com/users/jan-sulak.5270b127',
 };
 
 /* ===========================
