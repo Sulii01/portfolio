@@ -6,8 +6,8 @@
 const LINKS = {
   cvCs:     'cv/Šulák_Životopis.pdf',
   cvEn:     'cv/Šulák_CV.pdf',
-  linkedin: 'www.linkedin.com/in/jan-šulák',  // např. 'https://www.linkedin.com/in/...'
-  github:   'https://github.com/Sulii01',  // např. 'https://github.com/...'
+  linkedin: 'https://www.linkedin.com/in/jan-šulák',
+  github:   'https://github.com/Sulii01',
   credly:   '',  // např. 'https://www.credly.com/users/...'
 };
 
@@ -271,25 +271,6 @@ const terminal = (function () {
 
   return { start };
 })();
-
-
-/* ===========================
-   CONTACT FORM (DEMO)
-=========================== */
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type=submit]');
-  const orig = btn.textContent;
-  btn.textContent = document.documentElement.lang === 'en' ? '✔ Sent!' : '✔ Odesláno!';
-  btn.style.background = '#28c840';
-  btn.style.borderColor = '#28c840';
-  btn.style.color = '#000';
-  setTimeout(() => {
-    btn.textContent = orig;
-    btn.style.cssText = '';
-    this.reset();
-  }, 3000);
-});
 
 
 /* ===========================

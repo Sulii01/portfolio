@@ -656,12 +656,7 @@ a:hover { color: var(--white); }
 /* ===========================
    CONTACT
 =========================== */
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 4rem;
-  align-items: start;
-}
+.contact-wrapper { max-width: 560px; }
 .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
 .contact-item {
   display: flex;
@@ -680,45 +675,6 @@ a:hover { color: var(--white); }
   flex-shrink: 0;
 }
 
-.contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
-.form-group { position: relative; }
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.2rem;
-  color: var(--white);
-  font-family: var(--font-main);
-  font-size: .9rem;
-  outline: none;
-  transition: border-color var(--transition), box-shadow var(--transition);
-  resize: vertical;
-}
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 16px rgba(0,229,255,.12);
-}
-.form-group label {
-  position: absolute;
-  left: 1.2rem; top: 1rem;
-  color: var(--text-dim);
-  font-size: .88rem;
-  pointer-events: none;
-  transition: all .2s;
-  opacity: 0;
-}
-.form-note {
-  font-size: .75rem;
-  color: var(--text-dim);
-  font-style: italic;
-}
-
-@media (max-width: 768px) {
-  .contact-wrapper { grid-template-columns: 1fr; }
-}
 
 /* ===========================
    FOOTER
