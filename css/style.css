@@ -1205,3 +1205,33 @@ html[lang="en"] .lang-opt[data-lang="en"] { color: var(--accent); font-weight: 7
   .theses-grid { grid-template-columns: 1fr; }
   .thesis-card { padding: 1.5rem; }
 }
+
+/* ===========================
+   SVG IKONY
+=========================== */
+.ico {
+  width: 1em; height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  display: block;
+}
+.cert-icon, .project-icon, .thesis-icon, .c-icon { color: var(--accent); }
+.cert-icon {
+  width: 48px; height: 48px;
+  display: grid; place-items: center;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  background: rgba(0,229,255,.08);
+  border: 1px solid var(--border);
+}
+.project-icon, .thesis-icon { font-size: 1.45rem; }
+.c-icon { font-size: 1.15rem; }
+.hobby-icon { display: flex; justify-content: center; color: var(--accent2); font-size: 2.6rem; }
+.hobby-card:hover .hobby-icon { color: var(--accent); }
+.btn-icon { display: inline-flex; font-size: 1.05em; }
+.thesis-desc { font-size: .88rem; color: var(--text); margin: -.4rem 0 1.2rem; }
+.certs-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 960px) { .certs-grid { grid-template-columns: 1fr; } }
