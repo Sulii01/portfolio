@@ -1144,3 +1144,21 @@ html[lang="en"] .lang-opt[data-lang="en"] { color: var(--accent); font-weight: 7
 }
 .project-links { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin-top: 1rem; font-family: var(--font-mono); font-size: .8rem; }
 .project-featured { grid-column: 1 / -1; }
+
+/* Jazyky – úroveň podle CEFR */
+.sk-cefr {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  font-weight: 700;
+  padding: .1rem .55rem;
+  border-radius: 6px;
+  color: var(--accent);
+  background: rgba(0,229,255,.1);
+  border: 1px solid rgba(0,229,255,.3);
+}
+.badges-all {
+  display: inline-block;
+  margin: -1.3rem 0 1.8rem;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+}
